@@ -162,6 +162,43 @@
     });
   }
 
+  /* ---------- Nossos clientes: fotos das obras e depoimentos ---------- */
+  function iniciarClientes() {
+    var grade = $("#clientes-grid");
+    var lista = window.CLIENTES;
+    if (!grade) return;
+
+    if (!lista || !lista.length) {
+      grade.innerHTML =
+        '<div class="clientes-empty">' +
+          '<h3>Em breve, as obras dos nossos clientes</h3>' +
+          '<p>Estamos reunindo as fotos e os depoimentos de quem já construiu com a Chaant. Se a sua obra foi feita por nós, mande as fotos pelo WhatsApp e, com a sua autorização, publicamos aqui.</p>' +
+          '<a class="btn btn-primary btn-sm" href="' + whatsappUrl("Olá! Minha obra foi feita pela Chaant Engenharia. Quero enviar fotos e um depoimento para o site.") + '" target="_blank" rel="noopener">' +
+            '<i class="icon i-whatsapp" aria-hidden="true"></i>Enviar minhas fotos</a>' +
+        '</div>';
+      return;
+    }
+
+    grade.innerHTML = lista.map(function (cli) {
+      var fotos = (cli.fotos || []).map(function (src) {
+        return '<button class="zoom" type="button" data-zoom="' + escapeHtml(src) + '" data-alt="Obra de ' + escapeHtml(cli.obra || cli.nome) +
+          '" data-caption="' + escapeHtml(cli.nome) + (cli.local ? " — " + escapeHtml(cli.local) : "") + '" aria-label="Ampliar foto da obra de ' + escapeHtml(cli.nome) + '">' +
+          '<img src="' + escapeHtml(src) + '" alt="Obra de ' + escapeHtml(cli.obra || cli.nome) + '" loading="lazy"></button>';
+      }).join("");
+      var quote = cli.depoimento ? '<p class="cliente-quote">\u201C' + escapeHtml(cli.depoimento) + '\u201D</p>' : "";
+      var local = cli.local ? '<p class="cliente-local"><i class="icon i-pin" aria-hidden="true"></i>' + escapeHtml(cli.local) + '</p>' : "";
+      return (
+        '<article class="cliente">' +
+          '<div class="cliente-fotos">' + fotos + '</div>' +
+          '<div class="cliente-body">' +
+            '<h3>' + escapeHtml(cli.nome) + (cli.obra ? " — " + escapeHtml(cli.obra) : "") + '</h3>' +
+            local + quote +
+          '</div>' +
+        '</article>'
+      );
+    }).join("");
+  }
+
   /* ---------- Busca rápida (envia para o WhatsApp) ---------- */
   function iniciarBusca() {
     var form = $("#busca-form");
@@ -249,6 +286,7 @@
     iniciarMenu();
     iniciarComparador();
     iniciarImoveis();
+    iniciarClientes();
     iniciarLightbox();
     iniciarBusca();
     iniciarContato();

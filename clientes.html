@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contato | Chaant Engenharia</title>
-  <meta name="description" content="Solicite um orçamento sem compromisso à Chaant Engenharia pelo WhatsApp: obras, projetos, regularização de imóveis e casas à venda.">
+  <title>Nossos clientes | Chaant Engenharia</title>
+  <meta name="description" content="Fotos de obras entregues pela Chaant Engenharia e depoimentos de clientes.">
   <meta name="theme-color" content="#12137a">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,8 +28,8 @@
       <a href="sobre.html">Sobre</a>
       <a href="quem-somos.html">Quem somos</a>
       <a href="nosso-trabalho.html">Nosso trabalho</a>
-      <a href="clientes.html">Nossos clientes</a>
-      <a href="contato.html" aria-current="page">Contato</a>
+      <a href="clientes.html" aria-current="page">Nossos clientes</a>
+      <a href="contato.html">Contato</a>
       <a class="btn btn-accent" href="https://wa.me/5521999912149" data-wa data-wa-msg="Olá! Vim pelo site da Chaant Engenharia e gostaria de conversar.">
         <i class="icon i-whatsapp" aria-hidden="true"></i>WhatsApp
       </a>
@@ -43,66 +43,30 @@
   <div class="wrap">
     <ol class="crumbs" aria-label="Você está em">
         <li><a href="index.html">Início</a></li>
-        <li aria-current="page">Contato</li>
+        <li aria-current="page">Nossos clientes</li>
       </ol>
-    <h1>Solicite o seu orçamento.</h1>
-    <p class="lead">O orçamento é sem compromisso. Preencha o formulário e abrimos o WhatsApp com a sua mensagem pronta, ou chame direto.</p>
+    <h1>Obras entregues, contadas por quem mora nelas.</h1>
+    <p class="lead">Fotos das obras de cada cliente e o depoimento de quem acompanhou o projeto de perto.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap contact-grid">
-    <form class="form" id="contato-form" novalidate>
-      <div class="form-row">
-        <div class="field">
-          <label for="c-nome">Seu nome</label>
-          <input id="c-nome" name="nome" type="text" autocomplete="name" required aria-describedby="erro-nome">
-          <span class="field-error" id="erro-nome"></span>
-        </div>
-        <div class="field">
-          <label for="c-tel">Telefone com DDD</label>
-          <input id="c-tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" required aria-describedby="erro-telefone">
-          <span class="field-error" id="erro-telefone"></span>
-        </div>
-      </div>
-      <div class="field">
-        <label for="c-interesse">Sobre o que você quer falar?</label>
-        <select id="c-interesse" name="interesse">
-          <option>Orçamento para construir ou reformar</option>
-          <option>Comprar uma casa</option>
-          <option>Projeto arquitetônico</option>
-          <option>Projeto estrutural</option>
-          <option>Regularização de imóvel</option>
-          <option>Outro assunto</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="c-msg">Mensagem</label>
-        <textarea id="c-msg" name="mensagem" required aria-describedby="erro-mensagem"></textarea>
-        <span class="field-error" id="erro-mensagem"></span>
-      </div>
-      <button class="btn btn-accent" type="submit"><i class="icon i-whatsapp" aria-hidden="true"></i>Enviar pelo WhatsApp</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      <p class="form-note">Ao enviar, o WhatsApp abre com a mensagem pronta. Nenhum dado fica guardado neste site.</p>
-    </form>
+<section class="section" id="clientes">
+  <div class="wrap">
+    <p class="sr" id="clientes-status" aria-live="polite"></p>
+    <div class="clientes-grid" id="clientes-grid"></div>
+  </div>
+</section>
 
-    <div class="info">
-      <div class="info-item">
-        <span class="ico"><i class="icon i-whatsapp" aria-hidden="true"></i></span>
-        <div><h3>WhatsApp</h3><a href="https://wa.me/5521999912149" data-wa><span data-tel-texto>(21) 99991-2149</span></a></div>
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Sua obra foi feita pela Chaant?</h2>
+        <p>Mande as fotos da sua obra e, se quiser, um depoimento curto. Com a sua autorização, publicamos aqui.</p>
       </div>
-      <div class="info-item">
-        <span class="ico"><i class="icon i-instagram" aria-hidden="true"></i></span>
-        <div><h3>Instagram</h3><a href="https://www.instagram.com/chaantengenharia/" data-instagram><span data-ig-texto>@chaantengenharia</span></a></div>
-      </div>
-      <div class="info-item">
-        <span class="ico"><i class="icon i-shield" aria-hidden="true"></i></span>
-        <div><h3>Engenheiro responsável</h3><p>Marcos Chana, engenheiro civil<br>CREA-RJ 2024105813</p></div>
-      </div>
-      <div class="info-item">
-        <span class="ico"><i class="icon i-pin" aria-hidden="true"></i></span>
-        <div><h3>Atendimento</h3><p>Rio de Janeiro e região.</p></div>
-      </div>
+      <a class="btn btn-primary" href="https://wa.me/5521999912149" data-wa data-wa-msg="Olá! Minha obra foi feita pela Chaant Engenharia. Quero enviar fotos e um depoimento para o site.">
+        <i class="icon i-whatsapp" aria-hidden="true"></i>Enviar minhas fotos
+      </a>
     </div>
   </div>
 </section>
@@ -144,6 +108,7 @@
 </footer>
 
 <script src="config.js"></script>
+<script src="clientes.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

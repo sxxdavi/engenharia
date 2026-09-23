@@ -623,3 +623,23 @@ p { margin: 0; }
 .spec-sub { font-weight: 600; color: var(--sand); max-width: 22rem; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 12px; }
 .tag-list .badge { padding: 10px 20px; font-size: 1rem; }
+
+/* Nossos clientes */
+.clientes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.4vw, 32px); }
+.cliente { display: flex; flex-direction: column; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); transition: border-color 0.2s, transform 0.25s; }
+.cliente:hover { border-color: var(--navy); transform: translateY(-4px); }
+.cliente-fotos { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; overflow-x: auto; scroll-snap-type: x mandatory; aspect-ratio: 4 / 3; background: var(--paper); }
+.cliente-fotos .zoom { scroll-snap-align: start; aspect-ratio: 4 / 3; }
+.cliente-body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 22px; }
+.cliente-body h3 { font-size: 1.15rem; }
+.cliente-local { color: var(--muted); font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.cliente-local .icon { width: 16px; height: 16px; color: var(--orange-deep); }
+.cliente-quote { margin-top: 4px; padding-left: 14px; border-left: 3px solid var(--sand); color: var(--text); font-style: italic; }
+.clientes-empty {
+  grid-column: 1 / -1; display: grid; gap: 14px; justify-items: start;
+  padding: clamp(28px, 4vw, 40px); text-align: left; color: var(--muted);
+  background: var(--paper); border-radius: var(--r-md);
+}
+.clientes-empty h3 { color: var(--ink); }
+@media (max-width: 900px) { .clientes-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .clientes-grid { grid-template-columns: 1fr; } }
